@@ -1,0 +1,476 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d5016;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 0.3rem;
+  z-index: 1001;
+  position: relative;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #2d5016;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+nav.nav-menu {
+  display: flex;
+}
+
+nav.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav.nav-menu a:hover,
+nav.nav-menu a.active {
+  color: #2d5016;
+}
+
+.call-btn {
+  background: #2d5016;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.call-btn:hover {
+  background: #1f350f;
+}
+
+.call-text {
+  display: inline;
+}
+
+/* =========================
+   NEW SERVICES SECTION (REPLICATED DESIGN)
+========================= */
+.services {
+  padding: 0 0 4rem 0; /* Top padding moved to the green box */
+  background: #fff;
+}
+
+/* The Green Header Box from video */
+.services-header-box {
+  background-color: #4CAF50; 
+  color: white;
+  padding: 60px 20px 140px 20px;
+  text-align: center;
+  margin-bottom: -100px; /* Pulls cards up into the green area */
+}
+
+.services-header-box .section-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.services-header-box .services-subtitle {
+  color: #e8f5e9;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Card General Styling */
+.service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-header {
+  padding: 30px;
+  color: white;
+  min-height: 180px;
+}
+
+.card-header h3 {
+  margin: 15px 0 10px 0;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+
+/* Icon Container from Screenshot */
+.header-icon-bg {
+  background: rgba(255, 255, 255, 0.2);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.header-icon-bg span {
+  font-size: 1.5rem;
+}
+
+/* Card Body & Lists */
+.card-body {
+  padding: 25px;
+}
+
+.card-body h4 {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.card-body ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.card-body ul li {
+  padding: 5px 0;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+}
+
+.card-body ul li::before {
+  content: "•";
+  font-weight: bold;
+  display: inline-block; 
+  width: 1.2em;
+  font-size: 1.2rem;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 14px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* COLOR THEMES */
+/* Blue - AC */
+.card-blue .card-header { background-color: #3498db; }
+.card-blue .book-btn { background-color: #3498db; }
+.card-blue h4, .card-blue li::before { color: #3498db; }
+
+/* Cyan - Water Purifier */
+.card-cyan .card-header { background-color: #2bc0d1; }
+.card-cyan .book-btn { background-color: #2bc0d1; }
+.card-cyan h4, .card-cyan li::before { color: #2bc0d1; }
+
+/* Orange - Inverter */
+.card-orange .card-header { background-color: #f39c12; }
+.card-orange .book-btn { background-color: #f39c12; }
+.card-orange h4, .card-orange li::before { color: #f39c12; }
+
+/* Purple - CCTV */
+.card-purple .card-header { background-color: #8e24aa; }
+.card-purple .book-btn { background-color: #8e24aa; }
+.card-purple h4, .card-purple li::before { color: #8e24aa; }
+
+/* Green - Cash Counting */
+.card-green .card-header { background-color: #43a047; }
+.card-green .book-btn { background-color: #43a047; }
+.card-green h4, .card-green li::before { color: #43a047; }
+
+/* =========================
+   REINSTALLATION BANNER
+========================= */
+.reinstall-banner {
+  max-width: 1200px;
+  margin: 50px auto 0 auto;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.reinstall-banner h3 { color: #43a047; margin-bottom: 10px; }
+.reinstall-btn {
+  margin-top: 15px;
+  background: #2d5016;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* =========================
+   FOOTER & WHATSAPP
+========================= */
+footer {
+  background: #e8f5e9;
+  padding: 3rem 2rem 1rem;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h3 { color: #2d5016; margin-bottom: 1rem; }
+.footer-column ul { list-style: none; }
+.footer-column p, .footer-column a { color: #666; font-size: 0.95rem; text-decoration: none; display: block; margin-bottom: 8px; }
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  color: #666;
+}
+/* Container for both button and text */
+.whatsapp-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Hide the rectangular text button by default */
+.whatsapp-btn-rectangular {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    /* These three lines hide the text */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show the text ONLY when the container is hovered */
+.whatsapp-chat-container:hover .whatsapp-btn-rectangular {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* The circular icon styling */
+.whatsapp-btn-circular {
+    width: 60px;
+    height: 60px;
+    background: #66bb6a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    order: 2;
+  }
+
+  .call-btn {
+    order: 3;
+  }
+
+  .call-text {
+    display: none;
+  }
+
+  nav.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    order: 4;
+    width: 100%;
+  }
+
+  nav.nav-menu.active {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav.nav-menu ul {
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 0;
+  }
+
+  nav.nav-menu ul li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  nav.nav-menu ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav.nav-menu a {
+    display: block;
+    width: 100%;
+  }
+
+  .services-header-box {
+    padding-bottom: 160px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .call-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
